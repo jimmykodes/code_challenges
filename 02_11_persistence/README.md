@@ -1,4 +1,4 @@
-##Multiplicative persistence
+## Multiplicative persistence
 
 Write a function `persistence` that takes in a positive integer and 
 returns the number's multiplicative persistence, defined as the number of times the digits
