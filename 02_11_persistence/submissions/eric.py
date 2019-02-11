@@ -15,8 +15,6 @@ def persistence(number, tries=0):
     if number < 10:
         return tries
 
-    tries += 1
-
     # Version: I went to college for this
     total = reduce(lambda x, y: x * y, map(int, str(number)))
 
@@ -25,7 +23,7 @@ def persistence(number, tries=0):
     # for digit in str(number):
     #     total *= int(digit)
 
-    return persistence(total, tries)
+    return persistence(total, tries + 1)
 
 
 
