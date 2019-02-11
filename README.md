@@ -31,6 +31,6 @@ a single file and post it in slack so that we can all look at each other's
 work side-by-side.
 ___
 #### Note:
-I got this idea from a [codewars.com](www.codewars.com). If one challenge a week
+I got this idea from a [codewars.com](https://www.codewars.com/). If one challenge a week
 isn't enough for you, give this website a look. If you sign up and start participating
 here, let me know so we can find each other and become allies!
