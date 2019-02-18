@@ -21,7 +21,7 @@ organization, but I would love to start cycling who creates the weekly challenge
 cycle by sprint?). 
 
 ## Participation
-To participate, from `master` branch, rename the `base.py` file for that week as `your_name.py` 
+To participate, from `master` branch, rename the `base.py(.js)` file for that week as `your_name.py(.js)` 
 and move it to the submissions directory inside that week, then make a PR into the submissions 
 branch. Please try and refrain from looking into other people's submissions until you have
 actually completed it yourself. No cheating ;)
