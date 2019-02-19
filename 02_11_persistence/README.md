@@ -2,7 +2,7 @@
 
 Write a function `persistence` that takes in a positive integer and 
 returns the number's multiplicative persistence, defined as the number of times the digits
-of times the digits of the number must be multiplied
+of the number must be multiplied
 together (recursively) to reach a single digit number.
 
 
