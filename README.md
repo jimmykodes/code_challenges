@@ -21,13 +21,13 @@ organization, but I would love to start cycling who creates the weekly challenge
 cycle by sprint?). 
 
 ## Participation
-To participate, rename the `base.py` file for that week as `your_name.py` and move it to
-the submissions directory inside that week, then make a PR. Please try and refrain from 
-looking into other people's submissions until you have actually completed it yourself. 
-No cheating ;)
+To participate, from `master` branch, rename the `base.py(.js)` file for that week as `your_name.py(.js)` 
+and move it to the submissions directory inside that week, then make a PR into the submissions 
+branch. Please try and refrain from looking into other people's submissions until you have
+actually completed it yourself. No cheating ;)
 
-At the end of the week, I will concatenate all of the submissions into
-a single file and post it in slack so that we can all look at each other's 
+At the end of the week, I will merge the submission branch into master and concatenate all of 
+the submissions into a single file and post it in slack so that we can all look at each other's 
 work side-by-side.
 ___
 #### Note:
