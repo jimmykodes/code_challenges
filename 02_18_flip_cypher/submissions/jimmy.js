@@ -3,31 +3,38 @@ let _ = require('lodash')
 
 
 let flip = function (text) {
-    let alphabet = []
+    text = _.toLower(text)
 
-    for (let i = 97; i < 123; i++) {
-        alphabet.push(String.fromCharCode(i))
-    }
-
+    // See notes below
+    let alphabet = _.times(26, (i) => {
+        return String.fromCharCode(i + 97)
+    })
     const legend = _.zipObject(alphabet, alphabet.slice().reverse())
 
-    // This would obviously be faster to use the legend below instead of creating it every time the function is called,
-    // but it is less code golf-y to just hard code it, so I'm creating it for kicks and giggles
-
-    // const legend = {"a": "z", "b": "y", "c": "x", "d": "w", "e": "v", "f": "u", "g": "t", "h": "s", "i": "r", "j": "q", "k": "p", "l": "o",
-    //    "m": "n", "n": "m", "o": "l", "p": "k", "q": "j", "r": "i", "s": "h", "t": "g", "u": "f", "v": "e", "w": "d", "x": "c", "y": "b", "z": "a"}
-
-    text = _.toLower(text)
     let new_text = []
-    _.forEach(text, (letter) => {
-        if (_.indexOf(_.keys(legend), letter) >= 0) {
-            new_text.push(legend[letter])
+    _.forEach(text, (char) => {
+        if (char in legend) {
+            new_text.push(legend[char])
         } else {
-            new_text.push(letter)
+            new_text.push(char)
         }
     })
     return _.join(new_text, '')
 }
+
+// NOTES:
+// Alphabet could also be created with:
+// alphabet = []
+// _.forEach(_.range(97, 123), (i) => {
+//     alphabet.push(String.fromCharCode(i))
+// })
+
+// It would obviously be faster to use the legend below instead of creating it every time the function is called,
+// but it is less code golf-y to just hard code it, so I'm creating it for kicks and giggles
+
+// const legend = {"a": "z", "b": "y", "c": "x", "d": "w", "e": "v", "f": "u", "g": "t", "h": "s", "i": "r", "j": "q", "k": "p", "l": "o",
+//    "m": "n", "n": "m", "o": "l", "p": "k", "q": "j", "r": "i", "s": "h", "t": "g", "u": "f", "v": "e", "w": "d", "x": "c", "y": "b", "z": "a"}
+
 
 // Tests
 // Brought to you by Futurama
