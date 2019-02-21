@@ -1,19 +1,40 @@
-// Lodash inclusion. Uncomment to use
-// let _ = require('lodash')
-
+let _ = require('lodash')
 
 let flip = function (text) {
+    var lowerText = text.toLowerCase()
+    var cyphercode = {
+        'a': 'z',
+        'b': 'y',
+        'c': 'x',
+        'd': 'w',
+        'e': 'v',
+        'f': 'u',
+        'g': 't',
+        'h': 's',
+        'i': 'r',
+        'j': 'q',
+        'k': 'p',
+        'l': 'o',
+        'm': 'n',
+        'n': 'm',
+        'o': 'l',
+        'p': 'k',
+        'q': 'j',
+        'r': 'i',
+        's': 'h',
+        't': 'g',
+        'u': 'f',
+        'v': 'e',
+        'w': 'd',
+        'x': 'c',
+        'y': 'b',
+        'z': 'a',
+    }
 
-    // Your code here
+    result = _.replace(lowerText, /[a-z]/gi, letter => cyphercode[letter])
 
+    return(result)
 }
-
-
-
-
-
-
-
 
 // Tests
 // Brought to you by Futurama
