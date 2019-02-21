@@ -1,19 +1,20 @@
 // Lodash inclusion. Uncomment to use
 // let _ = require('lodash')
 
+/* Un-minified */
 
-let flip = function (text) {
+// let flip = function (text) {
+//     var result = "";
+//     return text.split("").forEach(function (char) {
+//         var n = char.toLowerCase().charCodeAt(0);
+//         if (n >= 97 && n <= 122) {
+//             var diff = 122 - (n - 97);
+//             result += String.fromCharCode(diff)
+//         } else result += char
+//     }), result
+// };
 
-    // Your code here
-
-}
-
-
-
-
-
-
-
+let flip=function(r){var o="";return r.split("").forEach(function(r){var a=r.toLowerCase().charCodeAt(0);if(a>=97&&a<=122){var e=122-(a-97);o+=String.fromCharCode(e)}else o+=r}),o};
 
 // Tests
 // Brought to you by Futurama
