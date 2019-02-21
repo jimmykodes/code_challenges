@@ -3,7 +3,6 @@ let _ = require('lodash')
 
 
 let preprocess = function(char) {
-    // console.log(char)
     if(char == ' ' || char == '!' || char == "," || char == "'") {
         return char
     } else {
