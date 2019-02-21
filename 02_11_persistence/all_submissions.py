@@ -79,3 +79,47 @@ def persistence(number):
         persistence_counter += 1
     return persistence_counter
 # =======================================================================================================
+
+
+# Bailey
+# =======================================================================================================
+# Persistence problem in the form of a Python class
+class persistence_class:
+    def __init__(self):
+        self.n_rec = 0
+
+    def pers(self, n):
+        number_s = str(n)
+        product = 1
+
+        for character in number_s:
+            product *= int(character)
+
+        if n < 10:
+            n_recursive = self.n_rec
+            self.n_rec = 0
+            return n_recursive
+        else:
+            self.n_rec += 1
+            return self.pers(product)
+
+
+# Persistence Interface Function
+def persistence(num):
+    return persistence_r(num, 0)
+
+
+# Persistence Recursive Helper Function
+def persistence_r(number, n_rec):
+    number_s = str(number)
+    product = 1
+
+    for character in number_s:
+        product *= int(character)
+
+    if number < 10:
+        return n_rec
+    else:
+        n_rec += 1
+        return persistence_r(product, n_rec)
+# =======================================================================================================
