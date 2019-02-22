@@ -3,20 +3,10 @@ let _ = require('lodash')
 
 
 let preprocess = function(char) {
-    if(char == ' ' || char == '!' || char == "," || char == "'") {
-        return char
-    } else {
-        return String.fromCharCode(26 - (char.toLowerCase().charCodeAt(0) - 97) + 96)
-    }
+    return _.find([" ", "!", ",", "'"], c => c === char) ? char : String.fromCharCode(26 - (char.toLowerCase().charCodeAt(0) - 97) + 96)
 }
 
-
 let flip = function (text) {
-    /*
-    a = 97
-    offset = a - 97
-    flipped = 26 - a
-     */
     return _.map(text.split(''), t => preprocess(t)).join("")
 }
 
