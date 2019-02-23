@@ -1,0 +1,22 @@
+{
+  "name": "code_practice",
+  "version": "1.0.0",
+  "description": "**The goal of this repository is to help facilitate learning from each other, and have fun while doing it.** ___ ## Overview One of the most helpful ways I have learned programming concepts is through seeing someone else's attempt at exactly the same problem. Where this can be a problem, (especially as a beginner) is that you seldom actually know the person on the other side of the code, and their relative merits as a programmer. They may say their version of the code is \"Best Practices,\" but if they just started learning programming 6 weeks ago, how am I to distinguish that? By making this a game amongst coworkers, that problem _should be_ mitigated. ;)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimmykodes/code_challenges.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimmykodes/code_challenges/issues"
+  },
+  "homepage": "https://github.com/jimmykodes/code_challenges#readme",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "ml-regression-simple-linear": "^1.0.2"
+  }
+}

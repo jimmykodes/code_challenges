@@ -1,11 +1,13 @@
 // Lodash inclusion. Uncomment to use
-// let _ = require('lodash')
+let _ = require('lodash')
 
+
+let preprocess = function(char) {
+    return _.find([" ", "!", ",", "'"], c => c === char) ? char : String.fromCharCode(26 - (char.toLowerCase().charCodeAt(0) - 97) + 96)
+}
 
 let flip = function (text) {
-
-    // Your code here
-
+    return _.map(text.split(''), t => preprocess(t)).join("")
 }
 
 
