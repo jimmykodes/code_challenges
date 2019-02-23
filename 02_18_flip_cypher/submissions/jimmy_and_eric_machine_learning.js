@@ -17,9 +17,7 @@ let train_data = (plaintext, cyphertext) => {
     return [x, y]
 }
 
-const training_data = train_data('Good News, Everyone!', 'tllw mvdh, veviblmv!')
-let regression = new SimpleLinearRegression(training_data[0], training_data[1])
-
+let regression = new SimpleLinearRegression(...train_data('Good News, Everyone!', 'tllw mvdh, veviblmv!'))
 
 const flip = (text) => {
     return _.join(_.map(text, (l) => {
