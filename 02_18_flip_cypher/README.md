@@ -36,8 +36,8 @@ flip('FoO bAR') => ull yzi
 ## Bonus?
 
 You can, of course, write this with just vanilla javascript. However, since learning new things is a large part of our
-goal, I have also included the files for the Lodash library. For more info on Lodash, look at their docs 
-[here](https://lodash.com).
+goal, I have also added an include statement for the Lodash library, use as desired. For more info on Lodash, look at 
+their docs [here](https://lodash.com).
 
 You'll need to install lodash first before using it:<br>
 `npm install lodash`
