@@ -1,8 +1,10 @@
+# All Submission
+
+### Eric
+```python
 from functools import reduce
 
 
-# Eric
-# =======================================================================================================
 def persistence(number, tries=0):
     if number < 10:
         return tries
@@ -16,11 +18,13 @@ def persistence(number, tries=0):
     #     total *= int(digit)
 
     return persistence(total, tries + 1)
-# =======================================================================================================
+```
+
+### Ted
+```python
+from functools import reduce
 
 
-# Ted
-# =======================================================================================================
 def get_digits(number):
     """Generates digits of the number without type coercion via .split() and looping through an array"""
     while number:
@@ -40,11 +44,10 @@ def persistence(number, counter=0):
     new_number = reduce(lambda x, y: x * y, get_digits(number))
 
     return persistence(new_number, counter + 1)
-# =======================================================================================================
+```
 
-
-# Chris
-# =======================================================================================================
+### Chris
+```python
 def persistence(number):
     str_var = str(number)
     counter = 0
@@ -63,11 +66,10 @@ def persistence(number):
         else:
             return counter
     return counter
-# =======================================================================================================
+```
 
-
-# Jimmy
-# =======================================================================================================
+### Jimmy
+```python
 def persistence(number):
     persistence_counter = 0
     num = str(number)
@@ -78,11 +80,11 @@ def persistence(number):
         num = str(product)
         persistence_counter += 1
     return persistence_counter
-# =======================================================================================================
+```
 
+### Bailey
+```python
 
-# Bailey
-# =======================================================================================================
 # Persistence problem in the form of a Python class
 class persistence_class:
     def __init__(self):
@@ -122,4 +124,4 @@ def persistence_r(number, n_rec):
     else:
         n_rec += 1
         return persistence_r(product, n_rec)
-# =======================================================================================================
+```
