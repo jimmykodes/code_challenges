@@ -1,7 +1,7 @@
-let _ = require('lodash')
+# All Submission
 
-// Bailey
-// *************************************************
+### Bailey
+```javascript
 let flip = function (text) {
     var a;
     var flipped = [];
@@ -16,11 +16,39 @@ let flip = function (text) {
     }
     return String.fromCharCode(...flipped);
 }
-// *************************************************
+```
 
+### Chris
+```javascript
+var dict = {
+    'a' : 'z',
+    'b' : 'y',
+    'c' : 'x',
+    'd' : 'w',
+    'e' : 'v',
+    'f' : 'u',
+    'g' : 't',
+    'h' : 's',
+    'i' : 'r',
+    'j' : 'q',
+    'k' : 'p',
+    'l' : 'o',
+    'm' : 'n',
+    'n' : 'm',
+    'o' : 'l',
+    'p' : 'k',
+    'q' : 'j',
+    'r' : 'i',
+    's' : 'h',
+    't' : 'g',
+    'u' : 'f',
+    'v' : 'e',
+    'w' : 'd',
+    'x' : 'c',
+    'y' : 'b',
+    'z' : 'a'
+};
 
-// Chris
-// *************************************************
 function flip(string) {
     var new_string = "";
     string = string.toLowerCase();
@@ -39,10 +67,13 @@ function flip(string) {
         }
     return new_string
 }
-// *************************************************
+```
 
-// Eric
-// *************************************************
+### Eric
+```javascript
+let _ = require('lodash')
+
+
 let preprocess = function(char) {
     return _.find([" ", "!", ",", "'"], c => c === char) ? char : String.fromCharCode(26 - (char.toLowerCase().charCodeAt(0) - 97) + 96)
 }
@@ -50,11 +81,10 @@ let preprocess = function(char) {
 let flip = function (text) {
     return _.map(text.split(''), t => preprocess(t)).join("")
 }
-// *************************************************
+```
 
-
-// Jimmy
-// *************************************************
+### Jimmy
+```javascript
 let flip = function (text) {
     text = _.toLower(text)
 
@@ -87,12 +117,13 @@ let flip = function (text) {
 
 // const legend = {"a": "z", "b": "y", "c": "x", "d": "w", "e": "v", "f": "u", "g": "t", "h": "s", "i": "r", "j": "q", "k": "p", "l": "o",
 //    "m": "n", "n": "m", "o": "l", "p": "k", "q": "j", "r": "i", "s": "h", "t": "g", "u": "f", "v": "e", "w": "d", "x": "c", "y": "b", "z": "a"}
-// *************************************************
+```
 
-
-// Machine Learning (completed by Jimmy, inspired by Eric)
-// *************************************************
+### Machine Learning
+```javascript
+// Finished by Jimmy. Inspired by Eric
 const SimpleLinearRegression = require('ml-regression-simple-linear')
+const _ = require('lodash')
 
 let char_code = (l) => {
     let char = l.charCodeAt(0)
@@ -121,11 +152,10 @@ const flip = (text) => {
         }
     }), '')
 }
-// *************************************************
+```
 
-
-// Ted
-// *************************************************
+### Ted
+```javascript
 let flip = function (text) {
     var lowerText = text.toLowerCase()
     var cyphercode = {
@@ -161,11 +191,10 @@ let flip = function (text) {
 
     return(result)
 }
-// *************************************************
+```
 
-
-// Tyler
-// *************************************************
+### Tyler
+```javascript
 /* Un-minified */
 
 // let flip = function (text) {
@@ -180,4 +209,4 @@ let flip = function (text) {
 // };
 
 let flip=function(r){var o="";return r.split("").forEach(function(r){var a=r.toLowerCase().charCodeAt(0);if(a>=97&&a<=122){var e=122-(a-97);o+=String.fromCharCode(e)}else o+=r}),o};
-// *************************************************
+```
