@@ -48,10 +48,9 @@ ___
 if you move the files around. The `require` statement should contain the relative
 file path to the `test.js` file. So if you are running this from outside the submissions
 folder, make sure the filepath is `./submissions/tests/test` and if you are inside the submissions
-folder, the path should be `./tests/test`.
+folder, the path should be `./tests/test`.</sub>
 
-<sup>[2]</sup> The times that will be posted in the statistics of the README will
+<sub><sup>[2]</sup> The times that will be posted in the statistics of the README will
 likely be different from your local times as they will be dependant on my machine 
 (and I might even run your submission against an even _bigger_ data set if the mood
-strikes me).
-</sub>
+strikes me).</sub>
