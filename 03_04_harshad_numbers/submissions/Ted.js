@@ -60,5 +60,5 @@ console.log('.get_series tests passed')
 
 
 // Uncomment for complete testing after passing initial tests
-let full_test = require('./submissions/tests/test')
+let full_test = require('./tests/test')
 full_test(Harshad)
