@@ -1,5 +1,4 @@
 def encode(plaintext, shift):
-    print(plaintext)
     b = bytearray(plaintext, 'utf-8')
     for i in range(len(plaintext)):
         c = b[i]
