@@ -1,5 +1,22 @@
 # All Submissions
 ## Statistics
+### Speed
+```
+bailey: 0.09148097038269043 ms
+   ted: 0.18241405487060547 ms
+ jimmy: 0.23460626602172852 ms
+```
+### Character Count
+```
+bailey: 369 
+   ted: 515
+ jimmy: 637
+```
+### Call Graph
+This is generated using PyCharm. It outlines the various functions each function calls.
+Can definitely see why Bailey's was the fastest! I don't even fully understand how to interpret
+all the data here, but what I do understand I find super interesting.
+![](call_graph.png)
 
 
 ## Code
