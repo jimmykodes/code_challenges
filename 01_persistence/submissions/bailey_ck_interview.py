@@ -6,6 +6,10 @@
 
 
 # Persistence problem in the form of a Python class
+import json
+import time
+
+
 class persistence_class:
     def __init__(self):
         self.n_rec = 0 
@@ -67,15 +71,26 @@ assert p.pers(3778888999) == 10
 assert p.pers(277777788888899) == 11
 
 # Test persistence function
+# Tests
 assert persistence(4) == 0
 assert persistence(10) == 1
-assert persistence(25) == 2
 assert persistence(39) == 3
-assert persistence(77) == 4
 assert persistence(679) == 5
-assert persistence(6788) == 6
 assert persistence(68889) == 7
-assert persistence(2677889) == 8
 assert persistence(26888999) == 9
 assert persistence(3778888999) == 10
 assert persistence(277777788888899) == 11
+
+
+def full_test():
+    with open('answers.json') as f:
+        answers = json.loads(f.read())
+    start = time.time()
+    for x, y in answers:
+        assert persistence(x) == y
+    print(f'All tests passed in {time.time() - start:.4f} seconds')
+
+
+# Uncomment to test
+full_test()
+
