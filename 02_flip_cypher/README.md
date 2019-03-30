@@ -1,7 +1,4 @@
-## Flip cypher
-
-Last week we worked with numbers; this week we'll be working with strings! Cyphers were the first things I started programming
-in python, and they helped me learn *many* useful tools. Hopefully that will hold true for Javascript as well.
+# Flip cypher
 
 This cypher is one of my favorites because the encoding and decoding processes are identical, so you don't have
 to write 2 different functions to handle your plain text and cypher text differently. It's reversible!
@@ -17,42 +14,83 @@ x = c
 y = b
 z = a
 ```
-
-#### Example
+Write a function `flip` that takes in a string and returns a flipped version of that string.
 ```
-flip('foo bar') => ull yzi
+foo bar => ull yzi
    and
-flip('ull yzi') => foo bar
+ull yzi => foo bar
 ```
-
 This cypher should handle punctuation like a champ:
 ```
-flip('foo, bar!') => ull, yzi!
+foo, bar! => ull, yzi!
 ```
 Capitalization, however, can be thrown out the window:
 ```
-flip('FoO bAR') => ull yzi
+FoO bAR => ull yzi
 ```
-## Bonus?
 
-You can, of course, write this with just vanilla javascript. However, since learning new things is a large part of our
-goal, I have also added an include statement for the Lodash library, use as desired. For more info on Lodash, look at 
-their docs [here](https://lodash.com).
+## Seeds
+### Python
+```python
+import json
+import time
 
-You'll need to install lodash first before using it:<br>
-`npm install lodash`
-___
 
-##### PS
+def flip(text):
+    # Your code here
+    pass
 
-A quick note on running javascript not inside a browser:<br>
-I'm assuming most of us know how to do this, but since I had no idea how before sitting down to write this week's
-challenge, I'll give just a quick explanation. 
+assert flip('foo bar') == 'ull yzi'
+assert flip('Good News, Everyone!') == 'tllw mvdh, veviblmv!'
+assert flip("ru uli zmb ivzhlm blf zivm'g xlnkovgvob hzgrhurvw, r szgv blf") == "if for any reason you aren't completely satisfied, i hate you"
+assert flip("r wlm'g dzmg gl orev lm gsrh kozmvg zmbnliv") == "i don't want to live on this planet anymore"
+assert flip("SHUT UP AND TAKE MY MONEY!") == "hsfg fk zmw gzpv nb nlmvb!"
 
-Basically, assuming you have node installed on your machine (`brew install node` to make sure) you can run js locally
-just like you would run python locally. Navigate to the file's location in your terminal and run `node <your_filename_here.js>`
 
-Testing in this challenge is done using node's `assert` capability, so if you are running this in something other
-than node, I have no idea whether this base file will work correctly. My understanding of javascript is pretty limited, 
-so if there are better ways to run javascript challenges, I'm all ears.
+def full_test():
+    with open('answers.json') as f:
+        answers = json.loads(f.read())
+    start = time.time()
+    for input_text, answer in answers:
+        assert flip(input_text) == answer, f'flip({input_text}) = {flip(input_text)} != {answer}'
+    print(f'All tests passed in {time.time() - start:.4f} seconds')
 
+```
+
+### Javascript
+```javascript
+let flip = function (text) {
+    // Your code here
+}
+
+// Tests
+
+let assert = require('assert')
+assert.strictEqual(flip('foo bar'), 'ull yzi')
+assert.strictEqual(flip('Good News, Everyone!'), 'tllw mvdh, veviblmv!')
+assert.strictEqual(flip("ru uli zmb ivzhlm blf zivm'g xlnkovgvob hzgrhurvw, r szgv blf"), "if for any reason you aren't completely satisfied, i hate you")
+assert.strictEqual(flip("r wlm'g dzmg gl orev lm gsrh kozmvg zmbnliv"), "i don't want to live on this planet anymore")
+assert.strictEqual(flip("SHUT UP AND TAKE MY MONEY!"), "hsfg fk zmw gzpv nb nlmvb!")
+console.log('Initial tests passed')
+
+let full_test = () => {
+    const start = new Date().getTime()
+    let answers = require('./answers')
+    answers.forEach(item => {
+        let [input, answer] = item
+        assert.strictEqual(flip(input), answer)
+    })
+    console.log(`Full tests passed in: ${new Date().getTime() - start}ms`)
+}
+
+// Uncomment for full tests
+// full_test()
+
+```
+### Answers.json
+```
+[
+  [input:string, answer:string],
+  ...
+]
+```

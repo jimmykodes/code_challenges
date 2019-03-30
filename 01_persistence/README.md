@@ -72,7 +72,7 @@ let answers = require('./answers')
 let full_test = () => {
     const start = new Date().getTime()
     answers.forEach(item => {
-        [x, y] = item
+        let [x, y] = item
         assert.strictEqual(persistence(x), y)
     })
     console.log(`Full tests passed in: ${new Date().getTime() - start}ms`)
