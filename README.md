@@ -23,12 +23,13 @@ challenge in, you can write your own. Please feel free to make a PR with your se
 the ReadMe so other people can benefit from it!
 
 ## Participation
-To participate, first, fork the repo. Then, using the seed code of the desired language, create
-a code file w/ your name (or github username) i.e. `jimmykodes.py` in the challenge's submissions
-directory. Write your code there and then create a PR here from your fork. Please be conscientious
-of any conflicts when making your PRs so I don't have to do a lot of extra work to merge your code.
-Please try and refrain from looking into other people's submissions until you have actually completed
-it yourself. No cheating ;)
+To participate, first, fork the repo. Notice the master branch is _just_ challenges, while the 
+submission branch has all the challenges _and_ solutions from everyone. Once you have forked the
+repo, using the seed code of the desired language, create a code file w/ your name (or github username)
+i.e. `jimmykodes.py` in the challenge's submissions directory. Write your code there and then create a
+PR into the `submissions` branch from your fork. Please be conscientious of any conflicts when making
+your PRs so I don't have to do a lot of extra work to merge your code.Please try and refrain from
+looking into other people's submissions until you have actually completed it yourself. No cheating ;)
 ___
 #### Note:
 There are issues created where you can comment and leave ideas for future challenges. This is still
