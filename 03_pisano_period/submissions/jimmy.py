@@ -1,3 +1,7 @@
+import json
+import time
+
+
 def pisano_period(divisor):
     """
     This can be done entirely independent of the Fibonacci sequence because the next number in a pisano sequence is always
@@ -18,3 +22,15 @@ assert pisano_period(11) == 10
 assert pisano_period(4) == 6
 assert pisano_period(6) == 24
 assert pisano_period(7) == 16
+
+
+def full_test():
+    with open('answers.json') as f:
+        answers = json.loads(f.read())
+    start = time.time()
+    for divisor, answer in answers:
+        assert pisano_period(divisor) == answer, f'pisano_period({divisor}) = {pisano_period(divisor)} != {answer}'
+    print(f'All tests passed in {time.time() - start:.4f} seconds')
+
+# Uncomment for full test
+full_test()

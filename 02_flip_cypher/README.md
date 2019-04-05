@@ -54,6 +54,9 @@ def full_test():
     for input_text, answer in answers:
         assert flip(input_text) == answer, f'flip({input_text}) = {flip(input_text)} != {answer}'
     print(f'All tests passed in {time.time() - start:.4f} seconds')
+    
+# Uncomment for full test
+# full_test()
 
 ```
 

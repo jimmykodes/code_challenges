@@ -29,28 +29,142 @@ given length.
 Harshad.get_series(19, 3) // returns [20, 21, 24]
 ```
 
-As with the last JS challenge, using lodash is highly encouraged, **_especially_**
-if you didn't use it in the last challenge.
-
-A new addition to this week's challenge is the abstraction of tests. Commented
-out at the bottom of the `base.js` file is the code to run a complete battery
-of tests against a _much_ larger data set<sup>[1]</sup>. The idea is that once you have passed
-the basic assert statements shown in the `base.js` file, you will then uncomment
-the `full_test` code and run your solution against the bigger test set. 
-(It will even give you some time readouts<sup>[2]</sup> to help hone in your efficiency.)
-<br>NOTE: In order to run the full tests, you will _have_ to have lodash installed on your machine.
-So even if you don't use it in your submission, you'll need to make sure you install it before
-trying to run the full tests.
+## Seeds
+### Python
+```python
+import json
+import time
 
 
-___
-<sub><sup>[1]</sup> The `require` statement for the `test.js` file _can_ go a little wonky
-if you move the files around. The `require` statement should contain the relative
-file path to the `test.js` file. So if you are running this from outside the submissions
-folder, make sure the filepath is `./submissions/tests/test` and if you are inside the submissions
-folder, the path should be `./tests/test`.</sub>
+class Harshad:
+    @staticmethod
+    def is_valid(number):
+        # return bool
+        pass
 
-<sub><sup>[2]</sup> The times that will be posted in the statistics of the README will
-likely be different from your local times as they will be dependant on my machine 
-(and I might even run your submission against an even _bigger_ data set if the mood
-strikes me).</sub>
+    @staticmethod
+    def get_next(number):
+        # return int
+        pass
+
+    @staticmethod
+    def get_series(start, length):
+        # return array
+        pass
+
+
+# .is_valid tests
+assert Harshad.is_valid(21) == True
+assert Harshad.is_valid(73) == False
+assert Harshad.is_valid(100) == True
+print('.is_valid tests passed')
+
+# .get_next tests
+assert Harshad.get_next(13) == 18
+assert Harshad.get_next(28) == 30
+assert Harshad.get_next(46) == 48
+print('.get_next tests passed')
+
+# .get_series tests
+assert Harshad.get_series(65, 11) == [70, 72, 80, 81, 84, 90, 100, 102, 108, 110, 111]
+assert Harshad.get_series(143, 12) == [144, 150, 152, 153, 156, 162, 171, 180, 190, 192, 195, 198]
+assert Harshad.get_series(110, 10) == [111, 112, 114, 117, 120, 126, 132, 133, 135, 140]
+print('.get_series tests passed')
+
+
+def full_test():
+    with open('answers.json') as f:
+        answers = json.loads(f.read())
+    start = time.time()
+    for n, answer in answers['is_valid']:
+        assert Harshad.is_valid(n) == answer, f'Harshad.is_valid({n}) = {Harshad.is_valid(n)} != {answer}'
+    for n, answer in answers['get_next']:
+        assert Harshad.get_next(n) == answer, f'Harshad.get_next({n}) = {Harshad.get_next(n)} != {answer}'
+    for start, length, answer in answers['get_series']:
+        assert Harshad.get_series(start, length) == answer, f'Harshad.get_series({start}, {length}) = {Harshad.get_series(start, length)} != {answer}'
+    print(f'Full tests passed in {time.time() - start:.4f} seconds')
+
+# Uncomment for full tests
+# full_test()
+
+```
+
+### Javascript
+```javascript
+let Harshad = {
+    is_valid: (number) => {
+        // return bool
+    },
+    get_next: (number) => {
+        // return int
+    },
+    get_series: (start, length) => {
+        // return array
+    }
+}
+
+// Tests
+/*************************************************************************************/
+
+let assert = require('assert')
+// .is_valid tests
+assert.strictEqual(Harshad.is_valid(21), true)
+assert.strictEqual(Harshad.is_valid(73), false)
+assert.strictEqual(Harshad.is_valid(100), true)
+console.log('.is_valid tests passed')
+
+// .get_next tests
+assert.strictEqual(Harshad.get_next(13), 18)
+assert.strictEqual(Harshad.get_next(28), 30)
+assert.strictEqual(Harshad.get_next(46), 48)
+console.log('.get_next tests passed')
+
+// .get_series tests
+assert.deepEqual(Harshad.get_series(65,11), [70, 72, 80, 81, 84, 90, 100, 102, 108, 110, 111])
+assert.deepEqual(Harshad.get_series(143,12), [144, 150, 152, 153, 156, 162, 171, 180, 190, 192, 195, 198])
+assert.deepEqual(Harshad.get_series(110, 10), [111, 112, 114, 117, 120, 126, 132, 133, 135, 140])
+console.log('.get_series tests passed')
+
+let full_test = () => {
+    const answers = require('./answers')
+    const start = new Date().getTime()
+
+    /*****************************************************************/
+
+    answers.is_valid.forEach(item => {
+        let [x, y] = item
+        assert.strictEqual(Harshad.is_valid(x), y)
+    })
+    /*****************************************************************/
+
+    answers.get_next.forEach(item => {
+        let [x, y] = item
+        assert.strictEqual(Harshad.get_next(x), y)
+    })
+
+    /*****************************************************************/
+
+    answers.get_series.forEach(item => {
+        let [x, y, z] = item
+        assert.deepEqual(Harshad.get_series(x, y), z)
+    })
+    console.log(`All tests passed in ${new Date().getTime() - start}ms`)
+
+    /*****************************************************************/
+}
+
+// Uncomment for complete testing after passing initial tests
+// full_test()
+
+```
+
+### Answers.json
+```
+{
+"is_valid": [number:int, is a harshad number:bool],
+"get_next": [number:int, next harshad number:int],
+"get_series": [starting point:int, length:int, [array of harshad numbers:array(int)]]
+}
+```
+
+
