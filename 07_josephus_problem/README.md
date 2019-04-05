@@ -41,7 +41,7 @@ def survive(n):
 
 # Tests
 assert survive(8) == 1
-assert survive(10) == 15
+assert survive(23) == 15
 assert survive(41) == 19
 print("Initial tests passed")
 
