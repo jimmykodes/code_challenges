@@ -4,7 +4,7 @@ import time
 
 
 def survive(n):
-    msb = 2**(math.floor(math.log2(n)))
+    msb = 1 << int(math.log2(n))
     remainder = n - msb
     return 2 * remainder + 1
 
