@@ -15,6 +15,64 @@ persistence(999) // returns 4
 ```
 ## Seeds
 
+### Go
+```go
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"math"
+"os"
+    "time"
+)
+
+func main() {
+	data := getAnswerJSON()
+    start := time.Now()
+	for _, item := range data {
+		attempt := persistence(item[0], 0)
+		if attempt != item[1] {
+			panic(fmt.Errorf("wrong answer for %d. %d != %d", item[0], attempt, item[1]))
+		}
+	}
+	fmt.Printf("Correctly answered all items in %v seconds\n", time.Since(start))
+}
+
+func persistence(number int, tries int) int {
+  return 0
+}
+
+func openFile() *os.File {
+	jsonFile, err := os.Open("01_persistence/submissions/answers.json")
+	if err != nil {
+		panic(err)
+	}
+	return jsonFile
+}
+
+func closeFile(file *os.File) {
+	if err := file.Close(); err != nil {
+		panic(err)
+	}
+}
+
+func getAnswerJSON() [][]int {
+	jsonFile := openFile()
+	defer closeFile(jsonFile)
+	byteValue, err := ioutil.ReadAll(jsonFile)
+	if err != nil {
+		panic(err)
+	}
+	var data [][]int
+	if err = json.Unmarshal(byteValue, &data); err != nil {
+		panic(err)
+	}
+	return data
+}
+```
+
 ### Python
 ```python
 import json
